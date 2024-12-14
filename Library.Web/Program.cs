@@ -1,4 +1,9 @@
 
+using Library.Core.Contexts;
+using Library.Web.Extensions;
+using Library.Web.MiddleWares;
+using Microsoft.EntityFrameworkCore;
+
 namespace Library.Web
 {
     public class Program
@@ -7,13 +12,22 @@ namespace Library.Web
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-
             builder.Services.AddControllers();
+            builder.Services.AddDbContext<LibraryIdentityContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection"));
+            });
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddAplicationService();
+            builder.Services.AddIdentityServices(builder.Configuration);
 
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerDocumentation();
+            builder.Services.AddCors(options => options.AddPolicy("CorsPolicy", policy =>
+            {
+                policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http:localhost:4200", "http://localhost:36496");
+
+            }));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -23,10 +37,15 @@ namespace Library.Web
                 app.UseSwaggerUI();
             }
 
+            app.UseMiddleware<ExceptionMiddleWare>();
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+            app.UseStaticFiles();
+            app.UseCors("CorsPolicy");
 
+            app.UseAuthentication();
+
+            app.UseAuthorization();
 
             app.MapControllers();
 
