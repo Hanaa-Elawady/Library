@@ -1,5 +1,7 @@
 ﻿using Library.Infastructure.Interfaces;
 using Library.Infastructure.Repositories;
+using Library.Services.Services.AuthorServices;
+using Library.Services.Services.BookService;
 using Library.Services.Services.Token;
 using Library.Services.Services.User;
 using Library.Web.HandleResponse;
@@ -14,6 +16,8 @@ namespace Library.Web.Extensions
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IAuthorService, AuthorService>();
+            services.AddScoped<IBookService, BookService>();
 
             services.Configure<ApiBehaviorOptions>(options =>
             {

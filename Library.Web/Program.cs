@@ -13,6 +13,10 @@ namespace Library.Web
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddControllers();
+            builder.Services.AddDbContext<LibraryDbContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+            });
             builder.Services.AddDbContext<LibraryIdentityContext>(options =>
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection"));
