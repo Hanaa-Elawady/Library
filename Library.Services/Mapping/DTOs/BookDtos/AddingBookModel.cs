@@ -1,12 +1,11 @@
 ﻿using static Library.Core.Entities.Enums.Book;
 
-namespace Library.Core.Entities.MainEntities
+namespace Library.Services.Mapping.DTOs.BookDtos
 {
-    public class Book :BaseEntity
+    public class AddingBookModel
     {
         public string Title { get; set; }
-        public Guid AuthorId { get; set; }
-        public Author? Author { get; set; }
+        public string AutherName { get; set; }
         public List<Genre> Genre { get; set; }
         public int CopiesAvailable { get; set; }
     }

@@ -1,6 +1,7 @@
 ﻿using Library.Core.Contexts;
 using Library.Core.Entities.MainEntities;
 using Library.Infastructure.Interfaces;
+using Library.Infastructure.Specifications.SpecificationBase;
 using Microsoft.EntityFrameworkCore;
 
 namespace Library.Infastructure.Repositories
@@ -25,10 +26,15 @@ namespace Library.Infastructure.Repositories
 
         public async Task<IReadOnlyList<TEntity>> GetAllAsync()
            => await _context.Set<TEntity>().ToListAsync();
+        public async Task<IReadOnlyList<TEntity>> GetAllWithSpecsAsync(BaseSpecifications<TEntity> specs)
+        => await SpecificationsEvaluator<TEntity>.GetQuery(_context.Set<TEntity>(), specs).AsNoTracking().ToListAsync();
         public async Task<IReadOnlyList<TEntity>> GetAllAsNoTrackingAsync()
            => await _context.Set<TEntity>().AsNoTracking().ToListAsync();
         public async Task<TEntity> GetByIdAsync(Guid id)
-           => await _context.Set<TEntity>().FindAsync(id);
+        => await _context.Set<TEntity>().FindAsync(id);
+       
+        public async Task<TEntity> GetByIdWithSpecsAsync(BaseSpecifications<TEntity> specs)
+        => await SpecificationsEvaluator<TEntity>.GetQuery(_context.Set<TEntity>(), specs).AsNoTracking().FirstOrDefaultAsync();
 
     }
 }

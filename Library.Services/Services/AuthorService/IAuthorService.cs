@@ -1,14 +1,14 @@
-﻿
-using Library.Core.Entities.MainEntities;
+﻿using Library.Infastructure.Specifications.AuthorSpecifications;
+using Library.Services.Mapping.DTOs.AuthorDtos;
 
 namespace Library.Services.Services.AuthorServices
 {
     public interface IAuthorService
     {
-        public Task<IEnumerable<Author>> GetAllAuthorsAsync();
-        public Task<Author> GetAuthorByIdAsync(Guid id);
-        public Task AddAuthorAsync(Author author);
-        public void UpdateAuthor(Author author);
-        public void DeleteAuthor(Guid authorId);
+        public Task<IEnumerable<AuthorDto>> GetAllAuthorsAsync(AuthorSpecification input);
+        public Task<AuthorDto> GetAuthorByIdAsync(Guid id);
+        public Task<AuthorDto> AddAuthorAsync(AddingAuthorModel author);
+        public Task<AuthorDto> UpdateAuthor(AuthorDto author);
+        public Task<int> DeleteAuthor(Guid id);
     }
 }

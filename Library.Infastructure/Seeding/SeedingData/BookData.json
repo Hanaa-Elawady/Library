@@ -1,0 +1,44 @@
+[
+  {
+    "Id": "a1b2c3d4-e5f6-7890-abcd-1234567890ef",
+    "Title": "Harry Potter and the Sorcerer's Stone",
+    "AuthorId": "550e8400-e29b-41d4-a716-446655440000",
+    "Genre": [ "Fantasy", "Children" ],
+    "CopiesAvailable": 15
+  },
+  {
+    "Id": "b2c3d4e5-f6a7-8901-bcde-2345678901ef",
+    "Title": "Harry Potter and the Chamber of Secrets",
+    "AuthorId": "550e8400-e29b-41d4-a716-446655440000",
+    "Genre": [ "Fantasy", "Children" ],
+    "CopiesAvailable": 12
+  },
+  {
+    "Id": "c3d4e5f6-a789-0123-cdef-3456789012ef",
+    "Title": "A Game of Thrones",
+    "AuthorId": "760e8400-f41c-22d7-b723-556755440001",
+    "Genre": [ "Fantasy", "Historical" ],
+    "CopiesAvailable": 8
+  },
+  {
+    "Id": "d4e5f6a7-8901-2345-deab-4567890123ef",
+    "Title": "A Clash of Kings",
+    "AuthorId": "760e8400-f41c-22d7-b723-556755440001",
+    "Genre": [ "Fantasy", "Historical" ],
+    "CopiesAvailable": 6
+  },
+  {
+    "Id": "e5f6a789-0123-4567-efab-5678901234ef",
+    "Title": "Murder on the Orient Express",
+    "AuthorId": "360e1234-c21f-12d8-c635-667755440002",
+    "Genre": [ "Mystery", "Thriller" ],
+    "CopiesAvailable": 10
+  },
+  {
+    "Id": "f6a78901-2345-6789-abcd-6789012345ef",
+    "Title": "And Then There Were None",
+    "AuthorId": "360e1234-c21f-12d8-c635-667755440002",
+    "Genre": [ "Mystery", "Thriller" ],
+    "CopiesAvailable": 7
+  }
+]

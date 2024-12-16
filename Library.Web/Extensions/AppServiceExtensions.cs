@@ -1,6 +1,7 @@
 ﻿using Library.Core.Contexts;
 using Library.Infastructure.Interfaces;
 using Library.Infastructure.Repositories;
+using Library.Services.Mapping.Profiles;
 using Library.Services.Services.AuthorServices;
 using Library.Services.Services.BookService;
 using Library.Services.Services.Token;
@@ -29,6 +30,9 @@ namespace Library.Web.Extensions
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAuthorService, AuthorService>();
             services.AddScoped<IBookService, BookService>();
+            services.AddAutoMapper(typeof(BookProfile));
+            services.AddAutoMapper(typeof(AuthorProfile));
+
 
             services.Configure<ApiBehaviorOptions>(options =>
             {

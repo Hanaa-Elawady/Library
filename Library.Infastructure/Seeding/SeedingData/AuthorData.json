@@ -1,0 +1,20 @@
+[
+  {
+    "Id": "550e8400-e29b-41d4-a716-446655440000",
+    "FullName": "J. K. Rowling",
+    "Biography": "Joanne Rowling CH OBE FRSL, known by her pen name J. K. Rowling, is a British author and philanthropist. She is best known for writing the Harry Potter series, a seven-volume fantasy saga published from 1997 to 2007.",
+    "DateOfBirth": "1965-07-31"
+  },
+  {
+    "Id": "760e8400-f41c-22d7-b723-556755440001",
+    "FullName": "George R. R. Martin",
+    "Biography": "George Raymond Richard Martin, often referred to as GRRM, is an American novelist and short story writer. He is the author of the epic fantasy series 'A Song of Ice and Fire,' which inspired the HBO series 'Game of Thrones.'",
+    "DateOfBirth": "1948-09-20"
+  },
+  {
+    "Id": "360e1234-c21f-12d8-c635-667755440002",
+    "FullName": "Agatha Christie",
+    "Biography": "Dame Agatha Mary Clarissa Christie was an English writer known for her 66 detective novels and 14 short story collections, particularly those revolving around her fictional detectives Hercule Poirot and Miss Marple.",
+    "DateOfBirth": "1890-09-15"
+  }
+]
